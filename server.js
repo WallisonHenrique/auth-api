@@ -7,9 +7,10 @@ const app = express();
 // Habilitar o Express a ler JSON
 app.use(express.json());
 app.use(cookieParser());
+const allowedOrigins = ["http://localhost:5173", "http://localhost:4173"];
 app.use(
   cors({
-    origin: "http://localhost:4173",
+    origin: allowedOrigins,
     credentials: true,
   }),
 );
